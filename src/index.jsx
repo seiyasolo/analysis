@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDom from "react-dom";
 
 export default class App extends Component {
     constructor(props) {
@@ -13,3 +14,12 @@ export default class App extends Component {
         )
     }
 }
+
+const render = (Component) => {
+    ReactDom.render(
+        <Component />,
+        document.getElementById('root')
+    );
+};
+
+render(App);
