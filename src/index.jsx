@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDom from "react-dom";
-import { Input } from 'antd';
+import { Input, Button } from 'antd';
 
 export default class App extends Component {
     constructor(props) {
@@ -10,7 +10,8 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Input placeholder={'my first react demo'} style={{width:'50%'}}></Input>
+                <Input placeholder={'my first react demo'} style={{ width: '50%' }}></Input>
+                <Button>231</Button>
             </div>
         )
     }

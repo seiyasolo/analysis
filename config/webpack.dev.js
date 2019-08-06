@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const merge = require("webpack-merge");
 const common = require("./webpack.common");
+const darkTheme = require('@ant-design/dark-theme');
 
 module.exports = merge(common, {
     mode: "development",
@@ -23,6 +24,31 @@ module.exports = merge(common, {
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/,
                 use: "file-loader"
+            },
+            // {
+            //     test: /\.less$/,
+            //     use: {
+            //         loader: 'less-loader',
+            //         options: {
+            //             modifyVars: darkTheme,
+            //             javascriptEnabled:true 
+            //         },
+            //     }
+            // }
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "less-loader", // compiles Less to CSS
+                    options: {
+                        sourceMap: true,
+                        modifyVars: darkTheme,
+                        javascriptEnabled: true,
+                    }
+                }]
             }
         ]
     },
