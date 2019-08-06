@@ -33,8 +33,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/template.html",
-            favicon: "./src/assets/favicon-32x32-next.png"
+            template: "./src/index.html",
+            // favicon: "./src/assets/favicon-32x32-next.png"
         })
     ]
 });
